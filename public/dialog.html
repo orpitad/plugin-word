@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialog Box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Dialog Box</h2>
+  <input type="text" id="dialog-input" placeholder="Enter text..." />
+  <button id="submit-button">Submit</button>
+
+  <script>
+    document.getElementById("submit-button").addEventListener("click", () => {
+      const inputValue = document.getElementById("dialog-input").value;
+      Office.context.ui.messageParent(inputValue); // Send the input value back to the task pane
+    });
+  </script>
+</body>
+</html>
